@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation"
 import { Asterisk, ArrowRight } from "lucide-react"
 import { toast } from "sonner"
 import { GoogleLoginButton } from "@/components/google-login-button"
+import { Logo } from "@/components/logo"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { authClient } from "@/lib/auth-client"
@@ -64,6 +65,10 @@ export default function RegisterPage() {
     <main className="min-h-[calc(100vh-4rem)] bg-background px-4 py-10 sm:px-6 sm:py-14">
       <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[1.75rem] border border-border bg-card p-6 sm:p-10 lg:p-14">
         <div className="relative">
+          <div className="mb-10">
+            <Logo />
+          </div>
+
           <p className="flex items-center gap-2 text-[11px] font-semibold tracking-[0.22em] text-muted-foreground uppercase">
             <Asterisk className="size-4 text-brand" />
             Join the network

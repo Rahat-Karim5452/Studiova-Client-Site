@@ -6,6 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation"
 import { Asterisk, ArrowRight } from "lucide-react"
 import { toast } from "sonner"
 import { GoogleLoginButton } from "@/components/google-login-button"
+import { Logo } from "@/components/logo"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { authClient } from "@/lib/auth-client"
@@ -50,6 +51,10 @@ function LoginForm() {
 
   return (
     <div className="relative">
+      <div className="mb-10">
+        <Logo />
+      </div>
+
       <p className="flex items-center gap-2 text-[11px] font-semibold tracking-[0.22em] text-muted-foreground uppercase">
         <Asterisk className="size-4 text-brand" />
         Welcome back
