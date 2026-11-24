@@ -64,7 +64,7 @@ function LoginForm() {
 
       <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
         Your bookings, listings, saved spaces and invoices live in one place.
-        Use your StudioSpace credentials or continue with Google.
+        Use your Studiova credentials or continue with Google.
       </p>
 
       <form onSubmit={handleEmailLogin} className="mt-10">
@@ -132,7 +132,7 @@ function LoginForm() {
         />
 
         <p className="mt-6 text-center text-sm text-muted-foreground">
-          New to StudioSpace?{" "}
+          New to Studiova?{" "}
           <Link
             href="/register"
             className="font-semibold text-primary hover:underline"

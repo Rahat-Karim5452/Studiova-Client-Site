@@ -6,7 +6,7 @@ export default function Loading() {
       <span className="flex size-14 items-center justify-center rounded-full bg-primary text-primary-foreground">
         <Aperture className="size-7 animate-spin" />
       </span>
-      <p className="text-sm text-muted-foreground">Loading StudioSpace...</p>
+      <p className="text-sm text-muted-foreground">Loading Studiova...</p>
     </main>
   )
 }

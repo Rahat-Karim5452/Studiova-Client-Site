@@ -43,7 +43,7 @@ export default async function AllStudiosPage({
           Explore Studios
         </h1>
         <p className="mt-3 text-sm text-muted-foreground">
-          Find the right creative space from every studio on StudioSpace
+          Find the right creative space from every studio on Studiova
         </p>
 
         <StudioFilters key={key} category={category} search={search} />

@@ -39,8 +39,8 @@ export function Categories() {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 to-black/10" />
-                <div className="absolute bottom-0 p-4 text-white">
+                <div className="absolute inset-0 bg-gradient-to-t from-hero-scrim-strong via-hero-scrim to-hero-scrim-soft" />
+                <div className="absolute bottom-0 p-4 text-foreground">
                   <Icon className="size-6" />
                   <h3 className="mt-2 text-lg font-semibold">
                     {category.label}

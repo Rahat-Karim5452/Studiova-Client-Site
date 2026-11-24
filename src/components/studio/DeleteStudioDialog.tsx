@@ -66,7 +66,7 @@ const DeleteStudioDialog = ({ id, title }: { id: string; title: string }) => {
           <AlertDialogTitle>Delete this studio?</AlertDialogTitle>
           <AlertDialogDescription>
             <span className="font-medium text-foreground">{title}</span> will be
-            permanently removed from StudioSpace. This action cannot be undone.
+            permanently removed from Studiova. This action cannot be undone.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>

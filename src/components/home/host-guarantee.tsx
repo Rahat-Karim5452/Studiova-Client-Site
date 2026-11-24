@@ -13,7 +13,7 @@ const guarantees = [
     value: "100%",
     title: "Verified host profiles",
     description:
-      "Hosts pass ID, address and equipment checks before a listing is published on StudioSpace.",
+      "Hosts pass ID, address and equipment checks before a listing is published on Studiova.",
     label: "ID-verified hosts",
   },
   {
@@ -47,8 +47,8 @@ export function HostGuarantee() {
 
         <div className="mt-6 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
           <p className="max-w-xl text-sm leading-relaxed text-muted-foreground">
-            A booking on StudioSpace is insured, verified and supported — for
-            the host and the crew walking in.
+            A booking on Studiova is insured, verified and supported — for the
+            host and the crew walking in.
           </p>
           <Link
             href="/how-it-works"

@@ -3,7 +3,7 @@ import Link from "next/link"
 import { ArrowRight, Check, Plus } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "How It Works - StudioSpace",
+  title: "How It Works",
 }
 
 const labelClass =
@@ -134,7 +134,7 @@ export default function HowItWorksPage() {
       <section className="mx-auto max-w-7xl px-6 pt-16 pb-14 lg:pt-24">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:items-start lg:gap-16">
           <div>
-            <p className={labelClass}>How Studio Space Works</p>
+            <p className={labelClass}>How Studiova Works</p>
 
             <h1 className="mt-5 max-w-3xl font-heading text-[clamp(2.75rem,5.4vw,4.5rem)] leading-[0.95] font-semibold tracking-[-0.045em]">
               Booking a room should feel{" "}

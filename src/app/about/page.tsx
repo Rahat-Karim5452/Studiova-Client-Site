@@ -3,7 +3,7 @@ import Image from "next/image"
 import { Heart, Target, Users } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "About Us - StudioSpace",
+  title: "About Us",
 }
 
 const values = [
@@ -37,9 +37,9 @@ export default function AboutPage() {
               About Us
             </h1>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              StudioSpace started with a simple idea. Great studios sit empty
-              for most of the week, while creators struggle to find a room for a
-              few hours.
+              Studiova started with a simple idea. Great studios sit empty for
+              most of the week, while creators struggle to find a room for a few
+              hours.
             </p>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               So we built a peer-to-peer marketplace where hosts earn from the

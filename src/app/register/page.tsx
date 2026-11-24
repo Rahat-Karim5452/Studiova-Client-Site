@@ -77,8 +77,8 @@ export default function RegisterPage() {
           </h1>
 
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-            Create a free StudioSpace account to reserve rooms, save favourites
-            and publish your own space to the network.
+            Create a free Studiova account to reserve rooms, save favourites and
+            publish your own space to the network.
           </p>
 
           <form onSubmit={handleEmailSignUp} className="mt-10">

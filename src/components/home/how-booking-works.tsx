@@ -49,7 +49,7 @@ export function HowBookingWorks() {
             </h2>
 
             <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">
-              No agents, no phone tag, no surprise line items. StudioSpace puts
+              No agents, no phone tag, no surprise line items. Studiova puts
               availability, pricing and the reservation itself in one flow.
             </p>
 

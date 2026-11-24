@@ -145,7 +145,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 sm:flex-row">
           <p className="text-xs text-muted-foreground">
-            © 2026 StudioSpace. All rights reserved. Terms of Service · Privacy
+            © 2026 Studiova. All rights reserved. Terms of Service · Privacy
             Policy
           </p>
           <div className="flex items-center gap-5">

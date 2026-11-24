@@ -74,7 +74,7 @@ const Featured = async () => {
           ) : (
             <EmptyState
               title="No studios yet"
-              description="Be the first host to list a creative space on StudioSpace."
+              description="Be the first host to list a creative space on Studiova."
               href="/add-studio"
               label="Add New Studio"
             />
