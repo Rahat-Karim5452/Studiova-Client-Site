@@ -21,9 +21,10 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 ## Architecture
 
-- App Router only; root shell is `app/layout.tsx` (ThemeProvider + `suppressHydrationWarning`). `@/*` maps to the repo root.
-- Auth: `lib/auth.ts` (Better Auth + Mongo adapter, email/password, Google, JWT plugin) is exposed by catch-all `app/api/auth/[...all]/route.ts`; browser code uses `lib/auth-client.ts` / `authClient.useSession()`.
-- Styling: Tailwind v4 with no `tailwind.config`; theme tokens in `app/globals.css`, handled by `@tailwindcss/postcss` in `postcss.config.mjs`. Turbopack has built-in CSS support — do not add a `turbopack.rules` CSS loader. shadcn `base-nova` components use Base UI primitives, not Radix; for links use `render={<Link href="..." />}` (`nativeButton={false}` on Button). Add components with `npx shadcn@latest add <name>` into `components/ui`.
+- App Router only; application code lives under `src/` (`src/app`, `src/components`, `src/lib`, `src/hooks`). `@/*` maps to `src/*`; `public/` and config files stay at the repo root. Do not recreate a root `app/` — Next ignores `src/app` when it exists. Root shell: `src/app/layout.tsx` (ThemeProvider + `suppressHydrationWarning`).
+- `src/proxy.ts` holds route protection; Next 16 proxy files belong inside `src/`.
+- Auth: `src/lib/auth.ts` (Better Auth + Mongo adapter, email/password, Google, JWT plugin) is exposed by catch-all `src/app/api/auth/[...all]/route.ts`; browser code uses `src/lib/auth-client.ts` / `authClient.useSession()`.
+- Styling: Tailwind v4 with no `tailwind.config`; theme tokens in `src/app/globals.css`, handled by `@tailwindcss/postcss` in `postcss.config.mjs`. Turbopack has built-in CSS support — do not add a `turbopack.rules` CSS loader. shadcn `base-nova` components use Base UI primitives, not Radix; for links use `render={<Link href="..." />}` (`nativeButton={false}` on Button). Add components with `npx shadcn@latest add <name>` into `src/components/ui`.
 - `next.config.ts` has React Compiler enabled, which requires the `babel-plugin-react-compiler` dev dependency; `cacheComponents`/`partialPrefetching` are disabled and all HTTPS `next/image` hosts are allowed.
-- `app/page.tsx` is still the template placeholder; `components/navbar.tsx` is client-side and not mounted in the root layout, and its `/login`, `/register`, `/dashboard`, etc. links have no routes yet.
+- `src/app/page.tsx` is still the template placeholder; `src/components/navbar.tsx` is client-side and not mounted in the root layout, and its `/login`, `/register`, `/dashboard`, etc. links have no routes yet.
 - `README.md` is still the stock template; trust `package.json`, `components.json`, and code.
