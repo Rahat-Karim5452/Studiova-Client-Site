@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import { authClient } from "@/lib/auth-client"
 import { amenities, categories } from "@/lib/constants"
 import { getTokenFromClient } from "@/lib/getTokenFromClient"
 import type { IStudio } from "@/lib/types/studio"
@@ -24,6 +25,11 @@ type FormValues = {
   imageUrl: string
   amenities: string[]
   overview: string
+}
+
+type Host = {
+  name: string
+  email: string
 }
 
 const initialValues = (studio?: IStudio): FormValues => ({
@@ -61,9 +67,17 @@ const uploadToImgBB = async (file: File): Promise<string> => {
 
 const StudioForm = ({ studio }: { studio?: IStudio }) => {
   const router = useRouter()
+  const { data: session } = authClient.useSession()
   const [values, setValues] = useState<FormValues>(() => initialValues(studio))
   const [uploading, setUploading] = useState(false)
   const [submitting, setSubmitting] = useState(false)
+
+  // read-only host info: the studio host when editing, the logged in user when adding
+  const host: Host | undefined = studio
+    ? { name: studio.ownerName, email: studio.ownerEmail }
+    : session?.user
+      ? { name: session.user.name, email: session.user.email }
+      : undefined
 
   const setField = <K extends keyof FormValues>(
     field: K,
@@ -169,11 +183,17 @@ const StudioForm = ({ studio }: { studio?: IStudio }) => {
 
   return (
     <form onSubmit={handleSubmit} className="mt-8 grid gap-6">
-      {studio && (
-        <p className="rounded-xl border border-border bg-muted/40 px-4 py-3 text-sm text-muted-foreground">
-          Listed by {studio.ownerName} ({studio.ownerEmail}). Host details
-          cannot be changed here.
-        </p>
+      {host && (
+        <div className="grid gap-6 sm:grid-cols-2">
+          <div className="grid gap-2">
+            <Label htmlFor="ownerName">Host name</Label>
+            <Input id="ownerName" value={host.name} readOnly disabled />
+          </div>
+          <div className="grid gap-2">
+            <Label htmlFor="ownerEmail">Host email</Label>
+            <Input id="ownerEmail" value={host.email} readOnly disabled />
+          </div>
+        </div>
       )}
 
       <div className="grid gap-2">
