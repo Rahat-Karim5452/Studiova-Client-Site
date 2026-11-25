@@ -4,18 +4,34 @@ Studiova is a peer-to-peer marketplace for creative workspaces. Hosts list photo
 studios, sound stages, podcast rooms, music suites and art workshops. Creators
 find a room, choose their hours and send a booking request.
 
+**Live site:** https://studiova-client-site.vercel.app/
+
+## Examiner test credentials
+
+| Role    | Email                     | Password           |
+| ------- | ------------------------- | ------------------ |
+| Creator | `YOUR_TEST_EMAIL_HERE`    | `YOUR_PASSWORD`    |
+
+You can also register a new account, or continue with Google.
+
 ## Features
 
-- Responsive home page with a Swiper hero, featured studios, categories, booking
-  walkthrough, host guarantee and closing CTA
-- Email/password and Google sign-in with Better Auth and the MongoDB adapter
-- Protected dashboard, listings, bookings and studio editor routes
-- Studio CRUD with ImgBB image upload; only the host of a studio can edit it
-- Booking requests with Pending, Confirmed, Completed and Cancelled states
-- Overlap protection for confirmed bookings
+- Responsive home page with a Swiper hero slider, featured studios (top 6 from
+  MongoDB), category cards, booking walkthrough and host guarantee section
+- Email/password and Google sign-in with Better Auth and the MongoDB adapter;
+  password must have an uppercase letter, a lowercase letter and 6+ characters
+- Protected dashboard, listings, bookings and studio editor routes; a logged-in
+  user stays logged in after a page reload
+- Studio CRUD with ImgBB image upload; only the host of a studio can update or
+  delete it, and deleting asks for confirmation in a modal
+- Booking requests with Pending, Confirmed, Completed and Cancelled states;
+  creators can cancel pending bookings and hosts can confirm or decline them
+- Double-booking protection: a time that overlaps a confirmed booking is rejected
+  with a clear error message
+- JWT-protected server routes that return 401 for unauthorized requests
+- Light and dark theme toggle that changes the whole site
 - Sonner toasts, confirmation dialogs, skeleton loaders, empty states and a
   custom 404 page
-- Centralized light/dark theme system with dark mode as the default
 
 ## Tech stack
 
